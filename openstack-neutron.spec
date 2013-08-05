@@ -384,7 +384,7 @@ networks using multiple other neutron plugins.
 
 
 %prep
-%setup -q -n neutron-%{version}.b2
+%setup -q -n neutron-%{version}
 
 %patch0001 -p1
 
@@ -878,6 +878,9 @@ fi
 
 
 %changelog
+* Mon Aug 5 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+- Drop b2 from release name (fixes upstream builds)
+
 * Thu Jul 25 2013 Terry Wilson <twilson@redhat.com> - 2013.2-0.3.b2
 - Update to havana milestone 2 release
 - Rename quantum to neutron
