@@ -425,7 +425,6 @@ install -p -D -m 755 bin/quantum-check-nvp-config %{buildroot}%{_bindir}/quantum
 install -p -D -m 755 bin/quantum-db-manage %{buildroot}%{_bindir}/quantum-db-manage
 install -p -D -m 755 bin/quantum-debug %{buildroot}%{_bindir}/quantum-debug
 install -p -D -m 755 bin/quantum-dhcp-agent %{buildroot}%{_bindir}/quantum-dhcp-agent
-install -p -D -m 755 bin/quantum-dhcp-agent-dnsmasq-lease-update %{buildroot}%{_bindir}/quantum-dhcp-agent-dnsmasq-lease-update
 install -p -D -m 755 bin/quantum-l3-agent %{buildroot}%{_bindir}/quantum-l3-agent
 install -p -D -m 755 bin/quantum-lbaas-agent %{buildroot}%{_bindir}/quantum-lbaas-agent
 install -p -D -m 755 bin/quantum-linuxbridge-agent %{buildroot}%{_bindir}/quantum-linuxbridge-agent
@@ -876,6 +875,9 @@ fi
 
 
 %changelog
+* Wed Aug 14 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+- Remove another quantum-dhcp-agent-dnsmasq-lease-update ref.
+
 * Tue Aug 13 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
 - Drop bin/neutron-dhcp-agent-dnsmasq-lease-update (removed from upstream)
 - Drop bin/quantum-dhcp-agent-dnsmasq-lease-update (removed from upstream)
