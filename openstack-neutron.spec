@@ -649,7 +649,6 @@ fi
 %{_bindir}/quantum-db-manage
 %{_bindir}/quantum-debug
 %{_bindir}/quantum-dhcp-agent
-%{_bindir}/quantum-dhcp-agent-dnsmasq-lease-update
 %{_bindir}/quantum-l3-agent
 %{_bindir}/quantum-lbaas-agent
 %{_bindir}/quantum-metadata-agent
@@ -879,6 +878,7 @@ fi
 %changelog
 * Tue Aug 13 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
 - Drop bin/neutron-dhcp-agent-dnsmasq-lease-update (removed from upstream)
+- Drop bin/quantum-dhcp-agent-dnsmasq-lease-update (removed from upstream)
 
 * Wed Aug 7 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
 - More Quantum -> Neutron name changes.
