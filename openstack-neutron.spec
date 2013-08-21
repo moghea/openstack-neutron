@@ -420,25 +420,6 @@ rm -rf %{buildroot}%{python_sitelib}/neutron/plugins/*/tests
 rm -f %{buildroot}%{python_sitelib}/neutron/plugins/*/run_tests.*
 rm %{buildroot}/usr/etc/init.d/neutron-server
 
-# Install execs (using hand-coded rather than generated versions)
-install -p -D -m 755 bin/quantum-check-nvp-config %{buildroot}%{_bindir}/quantum-check-nvp-config
-install -p -D -m 755 bin/quantum-db-manage %{buildroot}%{_bindir}/quantum-db-manage
-install -p -D -m 755 bin/quantum-debug %{buildroot}%{_bindir}/quantum-debug
-install -p -D -m 755 bin/quantum-dhcp-agent %{buildroot}%{_bindir}/quantum-dhcp-agent
-install -p -D -m 755 bin/quantum-l3-agent %{buildroot}%{_bindir}/quantum-l3-agent
-install -p -D -m 755 bin/quantum-lbaas-agent %{buildroot}%{_bindir}/quantum-lbaas-agent
-install -p -D -m 755 bin/quantum-linuxbridge-agent %{buildroot}%{_bindir}/quantum-linuxbridge-agent
-install -p -D -m 755 bin/quantum-metadata-agent %{buildroot}%{_bindir}/quantum-metadata-agent
-install -p -D -m 755 bin/quantum-nec-agent %{buildroot}%{_bindir}/quantum-nec-agent
-install -p -D -m 755 bin/quantum-netns-cleanup %{buildroot}%{_bindir}/quantum-netns-cleanup
-install -p -D -m 755 bin/quantum-ns-metadata-proxy %{buildroot}%{_bindir}/quantum-ns-metadata-proxy
-install -p -D -m 755 bin/quantum-openvswitch-agent %{buildroot}%{_bindir}/quantum-openvswitch-agent
-install -p -D -m 755 bin/quantum-ovs-cleanup %{buildroot}%{_bindir}/quantum-ovs-cleanup
-install -p -D -m 755 bin/quantum-rootwrap %{buildroot}%{_bindir}/quantum-rootwrap
-install -p -D -m 755 bin/quantum-ryu-agent %{buildroot}%{_bindir}/quantum-ryu-agent
-install -p -D -m 755 bin/quantum-server %{buildroot}%{_bindir}/quantum-server
-install -p -D -m 755 bin/quantum-usage-audit %{buildroot}%{_bindir}/quantum-usage-audit
-
 # Move rootwrap files to proper location
 install -d -m 755 %{buildroot}%{_datarootdir}/neutron/rootwrap
 mv %{buildroot}/usr/etc/neutron/rootwrap.d/*.filters %{buildroot}%{_datarootdir}/neutron/rootwrap
@@ -672,6 +653,7 @@ fi
 %{_bindir}/neutron-rootwrap
 %{_bindir}/neutron-rootwrap-xen-dom0
 %{_bindir}/neutron-server
+%{_bindir}/neutron-usage-audit
 %{_bindir}/neutron-server-setup
 
 %{_initrddir}/neutron-server
@@ -875,6 +857,10 @@ fi
 
 
 %changelog
+* Wed Aug 21 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+- No need to install bin/quantum-... files anymore.
+- Add bin/neutron-usage-audit.
+
 * Wed Aug 14 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
 - Remove another quantum-dhcp-agent-dnsmasq-lease-update ref.
 
