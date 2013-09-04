@@ -655,6 +655,8 @@ fi
 %{_bindir}/neutron-server
 %{_bindir}/neutron-usage-audit
 %{_bindir}/neutron-server-setup
+%{_bindir}/neutron-metering-agent
+%{_bindir}/neutron-vpn-agent
 
 %{_initrddir}/neutron-server
 %{_initrddir}/neutron-dhcp-agent
@@ -857,6 +859,9 @@ fi
 
 
 %changelog
+* Wed Sep 4 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+- Add neutron-metering-agent and neutron-vpn-agent.
+
 * Wed Aug 21 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
 - No need to install bin/quantum-... files anymore.
 - Add bin/neutron-usage-audit.
