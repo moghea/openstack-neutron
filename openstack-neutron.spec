@@ -677,6 +677,8 @@ fi
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l3_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/metadata_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/lbaas_agent.ini
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/metering_agent.ini
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/vpn_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/policy.json
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/neutron.conf
 %config(noreplace) %{_sysconfdir}/neutron/rootwrap.conf
@@ -859,24 +861,27 @@ fi
 
 
 %changelog
-* Wed Sep 4 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Thu Sep 5 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
+- Add metering_agent.ini and vpn_agent.ini files.
+
+* Wed Sep 4 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - Add neutron-metering-agent and neutron-vpn-agent.
 
-* Wed Aug 21 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Wed Aug 21 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - No need to install bin/quantum-... files anymore.
 - Add bin/neutron-usage-audit.
 
-* Wed Aug 14 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Wed Aug 14 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - Remove another quantum-dhcp-agent-dnsmasq-lease-update ref.
 
-* Tue Aug 13 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Tue Aug 13 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - Drop bin/neutron-dhcp-agent-dnsmasq-lease-update (removed from upstream)
 - Drop bin/quantum-dhcp-agent-dnsmasq-lease-update (removed from upstream)
 
-* Wed Aug 7 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Wed Aug 7 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - More Quantum -> Neutron name changes.
 
-* Mon Aug 5 2013 Dan prince <dprince@redhat.com> - 2013.2-0.3
+* Mon Aug 5 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
 - Drop b2 from release name (fixes upstream builds)
 
 * Thu Jul 25 2013 Terry Wilson <twilson@redhat.com> - 2013.2-0.3.b2
