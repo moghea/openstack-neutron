@@ -1,4 +1,4 @@
-From 5c5194e0b5257939f55ff04f6d1d6011d376f1f8 Mon Sep 17 00:00:00 2001
+From 1e3dd04afbfa4f29b2a43acf4075117b12fcad5e Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?P=C3=A1draig=20Brady?= <P@draigBrady.com>
 Date: Fri, 13 Apr 2012 17:24:40 +0100
 Subject: [PATCH] use parallel installed versions in RHEL6

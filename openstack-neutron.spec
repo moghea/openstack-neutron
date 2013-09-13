@@ -5,9 +5,9 @@
 
 Name:		openstack-neutron
 Version:	2013.2
-Release:	0.3.b2%{?dist}
+Release:	0.4.b3%{?dist}
 Provides:	openstack-quantum = %{version}-%{release}
-Obsoletes:	openstack-quantum < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum < 2013.2-0.3.b3
 
 Summary:	OpenStack Networking Service
 
@@ -16,7 +16,7 @@ License:	ASL 2.0
 URL:		http://launchpad.net/neutron/
 
 #Source0:	http://launchpad.net/neutron/%{release_name}/%{version}/+download/neutron-%{version}.tar.gz
-Source0:	http://launchpad.net/neutron/%{release_name}/%{release_name}-2/+download/neutron-%{version}.b2.tar.gz
+Source0:	http://launchpad.net/neutron/%{release_name}/%{release_name}-2/+download/neutron-%{version}.b3.tar.gz
 Source1:	neutron.logrotate
 Source2:	neutron-sudoers
 Source4:	neutron-server-setup
@@ -48,7 +48,7 @@ Source30:	neutron-mlnx-agent.init
 Source40:	neutron-mlnx-agent.upstart
 
 #
-# patches_base=2013.2.b2
+# patches_base=2013.2.b3
 #
 Patch0001: 0001-use-parallel-installed-versions-in-RHEL6.patch
 
@@ -85,21 +85,21 @@ Requires:	dnsmasq
 
 
 %description
-Neutron is a virtual network service for Openstack. Just like
+Quantum is a virtual network service for Openstack. Just like
 OpenStack Nova provides an API to dynamically request and configure
-virtual servers, Neutron provides an API to dynamically request and
+virtual servers, Quantum provides an API to dynamically request and
 configure virtual networks. These networks connect "interfaces" from
 other OpenStack services (e.g., virtual NICs from Nova VMs). The
-Neutron API supports extensions to provide advanced network
+Quantum API supports extensions to provide advanced network
 capabilities (e.g., QoS, ACLs, network monitoring, etc.)
 
 
 %package -n python-neutron
-Summary:	Neutron Python libraries
+Summary:	Quantum Python libraries
 Group:		Applications/System
 
 Provides:	python-quantum = %{version}-%{release}
-Obsoletes:	python-quantum < 2013.2-0.3.b2
+Obsoletes:	python-quantum < 2013.2-0.3.b3
 
 Requires:	MySQL-python
 Requires:	python-alembic
@@ -122,24 +122,24 @@ Requires:	python-neutronclient
 Requires:	sudo
 
 %description -n python-neutron
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron Python library.
 
 
 %package -n openstack-neutron-bigswitch
-Summary:	Neutron Big Switch plugin
+Summary:	Quantum Big Switch plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-bigswitch = %{version}-%{release}
-Obsoletes:	openstack-quantum-bigswitch < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-bigswitch < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-bigswitch
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -148,17 +148,17 @@ Networks Controller.
 
 
 %package -n openstack-neutron-brocade
-Summary:	Neutron Brocade plugin
+Summary:	Quantum Brocade plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-brocade = %{version}-%{release}
-Obsoletes:	openstack-quantum-brocade < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-brocade < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-brocade
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -166,18 +166,18 @@ networks using Brocade VCS switches running NOS.
 
 
 %package -n openstack-neutron-cisco
-Summary:	Neutron Cisco plugin
+Summary:	Quantum Cisco plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-cisco = %{version}-%{release}
-Obsoletes:	openstack-quantum-cisco < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-cisco < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 Requires:	python-configobj
 
 
 %description -n openstack-neutron-cisco
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -185,17 +185,17 @@ networks using Cisco UCS and Nexus.
 
 
 %package -n openstack-neutron-hyperv
-Summary:	Neutron Hyper-V plugin
+Summary:	Quantum Hyper-V plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-hyperv = %{version}-%{release}
-Obsoletes:	openstack-quantum-hyperv < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-hyperv < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-hyperv
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -203,11 +203,11 @@ networks using Microsoft Hyper-V.
 
 
 %package -n openstack-neutron-linuxbridge
-Summary:	Neutron linuxbridge plugin
+Summary:	Quantum linuxbridge plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-linuxbridge = %{version}-%{release}
-Obsoletes:	openstack-quantum-linuxbridge < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-linuxbridge < 2013.2-0.3.b3
 
 Requires:	bridge-utils
 Requires:	openstack-neutron = %{version}-%{release}
@@ -215,7 +215,7 @@ Requires:	python-pyudev
 
 
 %description -n openstack-neutron-linuxbridge
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -223,17 +223,17 @@ networks as VLANs using Linux bridging.
 
 
 %package -n openstack-neutron-midonet
-Summary:	Neutron MidoNet plugin
+Summary:	Quantum MidoNet plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-midonet = %{version}-%{release}
-Obsoletes:	openstack-quantum-midonet < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-midonet < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-midonet
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -241,17 +241,17 @@ networks using MidoNet from Midokura.
 
 
 %package -n openstack-neutron-ml2
-Summary:	Neutron ML2 plugin
+Summary:	Quantum ML2 plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-ml2 = %{version}-%{release}
-Obsoletes:	openstack-quantum-ml2 < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-ml2 < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-ml2
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains a neutron plugin that allows the use of drivers
@@ -260,32 +260,32 @@ for accessing those types.
 
 
 %package -n openstack-neutron-mellanox
-Summary:	Neutron Mellanox plugin
+Summary:	Quantum Mellanox plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-mellanox = %{version}-%{release}
-Obsoletes:	openstack-quantum-mellanox < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-mellanox < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-mellanox
-This plugin implements Neutron v2 APIs with support for Mellanox embedded
+This plugin implements Quantum v2 APIs with support for Mellanox embedded
 switch functionality as part of the VPI (Ethernet/InfiniBand) HCA.
 
 
 %package -n openstack-neutron-nicira
-Summary:	Neutron Nicira plugin
+Summary:	Quantum Nicira plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-nicira = %{version}-%{release}
-Obsoletes:	openstack-quantum-nicira < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-nicira < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-nicira
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -293,18 +293,18 @@ networks using Nicira NVP.
 
 
 %package -n openstack-neutron-openvswitch
-Summary:	Neutron openvswitch plugin
+Summary:	Quantum openvswitch plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-openvswitch = %{version}-%{release}
-Obsoletes:	openstack-quantum-openvswitch < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-openvswitch < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 Requires:	openvswitch
 
 
 %description -n openstack-neutron-openvswitch
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -312,17 +312,17 @@ networks using Open vSwitch.
 
 
 %package -n openstack-neutron-plumgrid
-Summary:	Neutron PLUMgrid plugin
+Summary:	Quantum PLUMgrid plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-plumgrid = %{version}-%{release}
-Obsoletes:	openstack-quantum-plumgrid < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-plumgrid < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-plumgrid
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -330,17 +330,17 @@ networks using the PLUMgrid platform.
 
 
 %package -n openstack-neutron-ryu
-Summary:	Neutron Ryu plugin
+Summary:	Quantum Ryu plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-ryu = %{version}-%{release}
-Obsoletes:	openstack-quantum-ryu < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-ryu < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-ryu
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -348,17 +348,17 @@ networks using the Ryu Network Operating System.
 
 
 %package -n openstack-neutron-nec
-Summary:	Neutron NEC plugin
+Summary:	Quantum NEC plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-nec = %{version}-%{release}
-Obsoletes:	openstack-quantum-nec < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-nec < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-nec
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
@@ -366,25 +366,50 @@ networks using the NEC OpenFlow controller.
 
 
 %package -n openstack-neutron-metaplugin
-Summary:	Neutron meta plugin
+Summary:	Quantum meta plugin
 Group:		Applications/System
 
 Provides:	openstack-quantum-metaplugin = %{version}-%{release}
-Obsoletes:	openstack-quantum-metaplugin < 2013.2-0.3.b2
+Obsoletes:	openstack-quantum-metaplugin < 2013.2-0.3.b3
 
 Requires:	openstack-neutron = %{version}-%{release}
 
 
 %description -n openstack-neutron-metaplugin
-Neutron provides an API to dynamically request and configure virtual
+Quantum provides an API to dynamically request and configure virtual
 networks.
 
 This package contains the neutron plugin that implements virtual
 networks using multiple other neutron plugins.
 
 
+%package -n openstack-neutron-meetering-agent
+Summary:	Neutron bandwidth metering agent
+Group:		Applications/System
+
+Requires:	openstack-neutron = %{version}-%{release}
+
+%description -n openstack-neutron-meetering-agent
+Neutron provides an API to measure bandwidth utilization
+
+This package contains the neutron agent responsible for generating bandwidth
+utilization notifications.
+
+%package -n openstack-neutron-vpn-agent
+Summary:	Neutron VPNaaS agent
+Group:		Applications/System
+
+Requires:	openstack-neutron = %{version}-%{release}
+
+%description -n openstack-neutron-vpn-agent
+Neutron provides an API to implement VPN as a service
+
+This package contains the neutron agent responsible for implenting VPNaaS with
+IPSec.
+
+
 %prep
-%setup -q -n neutron-%{version}
+%setup -q -n neutron-%{version}.b3
 
 %patch0001 -p1
 
@@ -481,9 +506,9 @@ install -p -m 644 %{SOURCE40} %{buildroot}%{_datadir}/neutron/
 
 # Install version info file
 cat > %{buildroot}%{_sysconfdir}/neutron/release <<EOF
-[Neutron]
+[Quantum]
 vendor = Fedora Project
-product = OpenStack Neutron
+product = OpenStack Quantum
 package = %{release}
 EOF
 
@@ -491,7 +516,7 @@ EOF
 getent group neutron >/dev/null || groupadd -o -r neutron --gid 164
 getent passwd neutron >/dev/null || \
     useradd -o --uid 164 -r -g neutron -d %{_sharedstatedir}/neutron -s /sbin/nologin \
-    -c "OpenStack Neutron Daemons" neutron
+    -c "OpenStack Quantum Daemons" neutron
 exit 0
 
 
@@ -653,10 +678,8 @@ fi
 %{_bindir}/neutron-rootwrap
 %{_bindir}/neutron-rootwrap-xen-dom0
 %{_bindir}/neutron-server
-%{_bindir}/neutron-usage-audit
 %{_bindir}/neutron-server-setup
-%{_bindir}/neutron-metering-agent
-%{_bindir}/neutron-vpn-agent
+%{_bindir}/neutron-usage-audit
 
 %{_initrddir}/neutron-server
 %{_initrddir}/neutron-dhcp-agent
@@ -677,8 +700,6 @@ fi
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l3_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/metadata_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/lbaas_agent.ini
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/metering_agent.ini
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/vpn_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/policy.json
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/neutron.conf
 %config(noreplace) %{_sysconfdir}/neutron/rootwrap.conf
@@ -860,29 +881,21 @@ fi
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/plugins/metaplugin/*.ini
 
 
+%files -n openstack-neutron-meetering-agent
+%doc LICENSE
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/metering_agent.ini
+%{_bindir}/neutron-metering-agent
+
+
+%files -n openstack-neutron-vpn-agent
+%doc LICENSE
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/vpn_agent.ini
+%{_bindir}/neutron-vpn-agent
+
+
 %changelog
-* Thu Sep 5 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- Add metering_agent.ini and vpn_agent.ini files.
-
-* Wed Sep 4 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- Add neutron-metering-agent and neutron-vpn-agent.
-
-* Wed Aug 21 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- No need to install bin/quantum-... files anymore.
-- Add bin/neutron-usage-audit.
-
-* Wed Aug 14 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- Remove another quantum-dhcp-agent-dnsmasq-lease-update ref.
-
-* Tue Aug 13 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- Drop bin/neutron-dhcp-agent-dnsmasq-lease-update (removed from upstream)
-- Drop bin/quantum-dhcp-agent-dnsmasq-lease-update (removed from upstream)
-
-* Wed Aug 7 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- More Quantum -> Neutron name changes.
-
-* Mon Aug 5 2013 Dan Prince <dprince@redhat.com> - 2013.2-0.3
-- Drop b2 from release name (fixes upstream builds)
+* Mon Sep 09 2013 Terry Wilson <twilson@rehdat.com> - 2013.2-0.4.b3
+- Update to havana milestone 3 release
 
 * Thu Jul 25 2013 Terry Wilson <twilson@redhat.com> - 2013.2-0.3.b2
 - Update to havana milestone 2 release
