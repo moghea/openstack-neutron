@@ -384,7 +384,7 @@ IPSec.
 
 
 %prep
-%setup -q -n neutron-%{version}.b3
+%setup -q -n neutron-%{version}
 
 
 sed -i 's/%{version}/%{version}/' PKG-INFO
@@ -821,6 +821,9 @@ fi
 %{_bindir}/neutron-vpn-agent
 
 %changelog
+* Fri Sep 13  2013 Dan Prince <dprince@redhat.com> - 2013.2-0.8.b3
+- Drop b3 from release name.
+
 * Tue Sep 10 2013 Terry Wilson <twilson@redhat.com> - 2013.2-0.8.b3
 - Add python-pbr dependency (for now)
 
