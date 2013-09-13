@@ -409,7 +409,7 @@ IPSec.
 
 
 %prep
-%setup -q -n neutron-%{version}.b3
+%setup -q -n neutron-%{version}
 
 %patch0001 -p1
 
@@ -894,6 +894,9 @@ fi
 
 
 %changelog
+* Fri Sep 13 2013 Dan Prince <dprince@rehdat.com> - 2013.2-0.4.b3
+- Remote b3 from version.
+
 * Mon Sep 09 2013 Terry Wilson <twilson@rehdat.com> - 2013.2-0.4.b3
 - Update to havana milestone 3 release
 
